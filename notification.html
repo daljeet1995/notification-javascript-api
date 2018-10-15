@@ -1,0 +1,28 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Notification</title>
+    </head>
+    <body>
+        <script>    
+            window.onload = function() {
+                Notification.requestPermission(status => {
+                    if(status == 'granted'){
+                     let notification =  new Notification('Notification Title',{body:"This is a sample Notification", icon:"./icon3.jpg"});
+                       notification.onclick =function(){
+                        //    alert("You Click on Notification Bar");
+                        notification.close();
+                       }
+                    }
+                    if(status == 'denied'){
+                        
+                    }
+                });
+            }
+        
+        </script>
+    </body>
+    </html>
